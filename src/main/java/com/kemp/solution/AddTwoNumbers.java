@@ -10,10 +10,6 @@ import com.kemp.utils.ListNodeUtils;
 public class AddTwoNumbers {
 
     public static void main(String[] args) {
-        testAddTwoNumbers();
-    }
-
-    private static void testAddTwoNumbers() {
 //        ListNode node1 = ListNodeUtils.creatNode(new int[]{2, 4, 3});
 //        ListNode node2 = ListNodeUtils.creatNode(new int[]{5, 6, 4});
 //        ListNode node1 = ListNodeUtils.creatNode(new int[]{0});
@@ -24,14 +20,16 @@ public class AddTwoNumbers {
         ListNodeUtils.printListNode(node1);
         ListNodeUtils.printListNode(node2);
 
-        ListNode node = addTwoNumbers(node1, node2);
-//        ListNode node = addTwoNumbers1(node1, node2);
+        AddTwoNumbers solution = new AddTwoNumbers();
+//        ListNode node = solution.addTwoNumbers(node1, node2);
+//        ListNode node = solution.addTwoNumbers1(node1, node2);
+        ListNode node = solution.addTwoNumbers2(node1, node2);
 
         ListNodeUtils.printListNode(node);
     }
 
     //递归实现
-    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         //如果没有该条件将会报java.lang.StackOverflowError
         if (l1 == null && l2 == null) {
             return null;
@@ -61,7 +59,7 @@ public class AddTwoNumbers {
     }
 
     //循环实现
-    public static ListNode addTwoNumbers1(ListNode l1, ListNode l2) {
+    public ListNode addTwoNumbers1(ListNode l1, ListNode l2) {
         if (l1 == null && l2 == null) {
             return null;
         }
@@ -85,5 +83,35 @@ public class AddTwoNumbers {
             temp2 = temp2 == null ? null : temp2.next;
         }
         return result;
+    }
+
+    /**
+     * 官方实现
+     */
+    public ListNode addTwoNumbers2(ListNode l1, ListNode l2) {
+        ListNode head = null, tail = null;
+        int carry = 0;
+        while (l1 != null || l2 != null) {
+            int n1 = l1 != null ? l1.val : 0;
+            int n2 = l2 != null ? l2.val : 0;
+            int sum = n1 + n2 + carry;
+            if (head == null) {
+                head = tail = new ListNode(sum % 10);
+            } else {
+                tail.next = new ListNode(sum % 10);
+                tail = tail.next;
+            }
+            carry = sum / 10;
+            if (l1 != null) {
+                l1 = l1.next;
+            }
+            if (l2 != null) {
+                l2 = l2.next;
+            }
+        }
+        if (carry > 0) {
+            tail.next = new ListNode(carry);
+        }
+        return head;
     }
 }
