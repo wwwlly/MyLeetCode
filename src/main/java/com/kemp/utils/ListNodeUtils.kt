@@ -31,7 +31,7 @@ object ListNodeUtils {
             sb.append("[")
             var temp = node
             while (temp != null) {
-                sb.append(temp.value)
+                sb.append(temp.`val`)
                 sb.append(",")
                 temp = temp.next
             }
