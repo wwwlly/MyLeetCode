@@ -1,4 +1,4 @@
-package com.kemp;
+package com.kemp.solution;
 
 import com.kemp.bean.ListNode;
 import com.kemp.utils.ListNodeUtils;
@@ -20,10 +20,13 @@ public class Solution_addTwoNumbers {
 //        ListNode node2 = ListNodeUtils.creatNode(new int[]{0});
         ListNode node1 = ListNodeUtils.creatNode(new int[]{9, 9, 9, 9, 9, 9, 9});
         ListNode node2 = ListNodeUtils.creatNode(new int[]{9, 9, 9, 9});
+
         ListNodeUtils.printListNode(node1);
         ListNodeUtils.printListNode(node2);
+
         ListNode node = addTwoNumbers(node1, node2);
 //        ListNode node = addTwoNumbers1(node1, node2);
+
         ListNodeUtils.printListNode(node);
     }
 

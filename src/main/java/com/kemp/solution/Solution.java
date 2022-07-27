@@ -1,4 +1,4 @@
-package com.kemp;
+package com.kemp.solution;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -72,8 +72,8 @@ public class Solution {
     public static int romanToInt(String s) {
 
         int result = 0;
-        int mark = 1;//1或-1
-        int curr = 0, pre = 0;
+        int mark;//1或-1
+        int curr, pre = 0;
         for (char c : s.toCharArray()) {
             curr = singlToInt(c);
             if (pre < curr) {
@@ -188,7 +188,7 @@ public class Solution {
         System.out.println(sum);
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
 //        testTwoSum();
 //        testReverse();
 //        testRomanToInt();
