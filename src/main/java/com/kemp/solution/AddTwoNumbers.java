@@ -10,12 +10,12 @@ import com.kemp.utils.ListNodeUtils;
 public class AddTwoNumbers {
 
     public static void main(String[] args) {
-//        ListNode node1 = ListNodeUtils.creatNode(new int[]{2, 4, 3});
-//        ListNode node2 = ListNodeUtils.creatNode(new int[]{5, 6, 4});
-//        ListNode node1 = ListNodeUtils.creatNode(new int[]{0});
-//        ListNode node2 = ListNodeUtils.creatNode(new int[]{0});
-        ListNode node1 = ListNodeUtils.creatNode(new int[]{9, 9, 9, 9, 9, 9, 9});
-        ListNode node2 = ListNodeUtils.creatNode(new int[]{9, 9, 9, 9});
+//        ListNode node1 = ListNodeUtils.creatNode(2, 4, 3);
+//        ListNode node2 = ListNodeUtils.creatNode(5, 6, 4);
+//        ListNode node1 = ListNodeUtils.creatNodeArray(new int[]{0});
+//        ListNode node2 = ListNodeUtils.creatNodeArray(new int[]{0});
+        ListNode node1 = ListNodeUtils.creatNode(9, 9, 9, 9, 9, 9, 9);
+        ListNode node2 = ListNodeUtils.creatNode(9, 9, 9, 9);
 
         ListNodeUtils.printListNode(node1);
         ListNodeUtils.printListNode(node2);

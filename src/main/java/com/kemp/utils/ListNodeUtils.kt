@@ -5,7 +5,12 @@ import com.kemp.bean.ListNode
 object ListNodeUtils {
 
     @JvmStatic
-    fun creatNode(nums: IntArray?): ListNode? {
+    fun creatNode(vararg nums: Int): ListNode? {
+        return creatNodeArray(nums)
+    }
+
+    @JvmStatic
+    fun creatNodeArray(nums: IntArray?): ListNode? {
         if (nums == null) {
             return null
         }
@@ -38,6 +43,14 @@ object ListNodeUtils {
             sb.deleteCharAt(sb.length - 1)
             sb.append("]")
             println(sb.toString())
+        }
+    }
+
+    fun printNode(node: ListNode?) {
+        if (node == null) {
+            println("ListNode is null")
+        } else {
+            println("val: ${node.`val`} next: ${node.next?.`val` ?: "null"}")
         }
     }
 }
