@@ -19,9 +19,9 @@ class ReverseList {
         val listNode = ListNodeUtils.creatNode(1, 2, 3, 4, 5)
         ListNodeUtils.printListNode(listNode)
 
-//        val result = reverseList1(listNode)
+        val result = reverseList1(listNode)
 //        val result = reverseList2(listNode)
-        val result = reverseList3(listNode)
+//        val result = reverseList3(listNode)
         ListNodeUtils.printListNode(result)
 
     }
@@ -37,6 +37,7 @@ class ReverseList {
         println("start: ${head.`val`}")
         val temp = reverseList1(head.next)
         println("end: ${head.`val`}")
+        println("temp: $temp")
 
         head.next?.next = head
         head.next = null
@@ -82,7 +83,7 @@ class ReverseList {
         while (stack.isNotEmpty()) {
             temp?.next = stack.pop()
             temp = temp?.next
-            ListNodeUtils.printNode(temp)
+            ListNodeUtils.printCurNode(temp)
         }
 
         //链表注意环
