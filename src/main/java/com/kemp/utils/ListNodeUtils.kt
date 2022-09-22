@@ -32,21 +32,11 @@ object ListNodeUtils {
         if (node == null) {
             println("ListNode is null")
         } else {
-            val sb = StringBuilder()
-            sb.append("[")
-            var temp = node
-            while (temp != null) {
-                sb.append(temp.`val`)
-                sb.append(",")
-                temp = temp.next
-            }
-            sb.deleteCharAt(sb.length - 1)
-            sb.append("]")
-            println(sb.toString())
+            println(node)
         }
     }
 
-    fun printNode(node: ListNode?) {
+    fun printCurNode(node: ListNode?) {
         if (node == null) {
             println("ListNode is null")
         } else {
