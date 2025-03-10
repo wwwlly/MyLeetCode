@@ -37,10 +37,12 @@ class ReverseList {
         println("start: ${head.`val`}")
         val temp = reverseList1(head.next)
         println("end: ${head.`val`}")
-        println("temp: $temp")
+        println("temp start: $temp")
 
         head.next?.next = head
         head.next = null
+
+        println("temp end: $temp")
         return temp
     }
 
